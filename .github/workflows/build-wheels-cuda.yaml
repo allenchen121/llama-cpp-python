@@ -20,7 +20,7 @@ jobs:
         id: set-matrix
         run: |
           $matrix = @{
-              'os' = @('windows-2022')
+              'os' = @('windows-2019')
               'pyver' = @("3.12")
               'cuda' = @("12.5.1")
               'releasetag' = @("basic")
@@ -46,8 +46,6 @@ jobs:
       - name: Add MSBuild to PATH
         if: runner.os == 'Windows'
         uses: microsoft/setup-msbuild@v2
-        with:
-          vs-version: '[17.13.35710.127]'
   
       - uses: actions/checkout@v4
         with:
